@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="mai_locations">
+        <body>
+            <!-- Table labels -->
+            <trans-unit id="table.tx_mailocations_location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="table.tx_mailocations_opening_hours">
+                <source>Opening Hours</source>
+            </trans-unit>
+
+            <!-- Location fields -->
+            <trans-unit id="tx_mailocations_location.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.street">
+                <source>Street</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.zip">
+                <source>ZIP Code</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.city">
+                <source>City</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.country">
+                <source>Country</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.latitude">
+                <source>Latitude</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.longitude">
+                <source>Longitude</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.image.addFile">
+                <source>Add image</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_location.opening_hours">
+                <source>Opening Hours</source>
+            </trans-unit>
+
+            <!-- Palettes -->
+            <trans-unit id="palette.address">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="palette.coordinates">
+                <source>Coordinates</source>
+            </trans-unit>
+            <trans-unit id="palette.times">
+                <source>Times</source>
+            </trans-unit>
+
+            <!-- OpeningHours fields -->
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week">
+                <source>Day of Week</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.0">
+                <source>Monday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.1">
+                <source>Tuesday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.2">
+                <source>Wednesday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.3">
+                <source>Thursday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.4">
+                <source>Friday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.5">
+                <source>Saturday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.6">
+                <source>Sunday</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.day_of_week.special">
+                <source>Special Day</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.time_open">
+                <source>Opens at</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.time_close">
+                <source>Closes at</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.is_closed">
+                <source>Closed</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.note">
+                <source>Note</source>
+            </trans-unit>
+            <trans-unit id="tx_mailocations_opening_hours.special_date">
+                <source>Special Date</source>
+            </trans-unit>
+
+            <!-- Tabs -->
+            <trans-unit id="tab.language">
+                <source>Language</source>
+            </trans-unit>
+            <trans-unit id="tab.access">
+                <source>Access</source>
+            </trans-unit>
+
+            <!-- Plugins -->
+            <trans-unit id="plugin.list.title">
+                <source>Locations: List</source>
+            </trans-unit>
+            <trans-unit id="plugin.detail.title">
+                <source>Locations: Detail</source>
+            </trans-unit>
+
+            <!-- CTypes -->
+            <trans-unit id="ctype.locations_list">
+                <source>Locations List</source>
+            </trans-unit>
+            <trans-unit id="ctype.locations_detail">
+                <source>Location Detail</source>
+            </trans-unit>
+
+            <!-- FlexForm -->
+            <trans-unit id="flexform.sheet.general">
+                <source>General</source>
+            </trans-unit>
+            <trans-unit id="flexform.field.pages">
+                <source>Record Storage Pages</source>
+            </trans-unit>
+            <trans-unit id="flexform.field.detailPageUid">
+                <source>Detail Page</source>
+            </trans-unit>
+
+            <!-- Frontend -->
+            <trans-unit id="dayOfWeek.0">
+                <source>Monday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.1">
+                <source>Tuesday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.2">
+                <source>Wednesday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.3">
+                <source>Thursday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.4">
+                <source>Friday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.5">
+                <source>Saturday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.6">
+                <source>Sunday</source>
+            </trans-unit>
+            <trans-unit id="opening_hours.closed">
+                <source>Closed</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

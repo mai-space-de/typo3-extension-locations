@@ -1,0 +1,36 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<ul class="opening-hours">
+    <f:for each="{openingHours}" as="slot">
+        <li class="opening-hours__row {f:if(condition: slot.isClosed, then: 'opening-hours__row--closed')}">
+            <f:if condition="{slot.isSpecialDay}">
+                <f:then>
+                    <span class="opening-hours__day">
+                        <f:format.date format="d.m.Y">{slot.specialDate}</f:format.date>
+                    </span>
+                </f:then>
+                <f:else>
+                    <span class="opening-hours__day">
+                        <f:translate key="dayOfWeek.{slot.dayOfWeek}" extensionName="mai_locations" />
+                    </span>
+                </f:else>
+            </f:if>
+            <span class="opening-hours__times">
+                <f:if condition="{slot.isClosed}">
+                    <f:then>
+                        <f:translate key="opening_hours.closed" extensionName="mai_locations" />
+                    </f:then>
+                    <f:else>
+                        {slot.timeOpen} – {slot.timeClose}
+                    </f:else>
+                </f:if>
+            </span>
+            <f:if condition="{slot.note}">
+                <span class="opening-hours__note">{slot.note}</span>
+            </f:if>
+        </li>
+    </f:for>
+</ul>
+</html>

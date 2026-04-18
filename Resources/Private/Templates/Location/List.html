@@ -1,0 +1,42 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:for each="{locations}" as="location">
+    <div class="location-card">
+        <f:if condition="{location.coverImage}">
+            <div class="location-card__image">
+                <f:image image="{location.coverImage}" alt="{location.name}" width="400" height="300c" />
+            </div>
+        </f:if>
+        <div class="location-card__content">
+            <h3 class="location-card__name">
+                <f:link.action action="detail" arguments="{location: location}" pageUid="{settings.detailPageUid}">
+                    {location.name}
+                </f:link.action>
+            </h3>
+            <address class="location-card__address">
+                <f:if condition="{location.street}">
+                    <span>{location.street}</span><br />
+                </f:if>
+                <f:if condition="{location.zip || location.city}">
+                    <span>{location.zip} {location.city}</span><br />
+                </f:if>
+                <f:if condition="{location.country}">
+                    <span>{location.country}</span>
+                </f:if>
+            </address>
+            <f:if condition="{location.phone}">
+                <p class="location-card__phone">
+                    <a href="tel:{location.phone}">{location.phone}</a>
+                </p>
+            </f:if>
+            <f:if condition="{location.email}">
+                <p class="location-card__email">
+                    <a href="mailto:{location.email}">{location.email}</a>
+                </p>
+            </f:if>
+        </div>
+    </div>
+</f:for>
+</html>

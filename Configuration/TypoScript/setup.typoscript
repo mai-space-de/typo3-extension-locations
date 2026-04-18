@@ -1,0 +1,39 @@
+plugin.tx_mailocations_list {
+    view {
+        templateRootPaths {
+            0 = EXT:mai_locations/Resources/Private/Templates/
+            10 = {$plugin.tx_mailocations_list.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:mai_locations/Resources/Private/Partials/
+            10 = {$plugin.tx_mailocations_list.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:mai_locations/Resources/Private/Layouts/
+            10 = {$plugin.tx_mailocations_list.view.layoutRootPath}
+        }
+    }
+    persistence {
+        storagePid = {$plugin.tx_mailocations_list.persistence.storagePid}
+    }
+}
+
+plugin.tx_mailocations_detail {
+    view {
+        templateRootPaths {
+            0 = EXT:mai_locations/Resources/Private/Templates/
+            10 = {$plugin.tx_mailocations_detail.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:mai_locations/Resources/Private/Partials/
+            10 = {$plugin.tx_mailocations_detail.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:mai_locations/Resources/Private/Layouts/
+            10 = {$plugin.tx_mailocations_detail.view.layoutRootPath}
+        }
+    }
+    persistence {
+        storagePid = {$plugin.tx_mailocations_detail.persistence.storagePid}
+    }
+}

@@ -1,0 +1,57 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<article class="location-detail">
+    <f:if condition="{location.coverImage}">
+        <div class="location-detail__image">
+            <f:image image="{location.coverImage}" alt="{location.name}" width="800" height="450c" />
+        </div>
+    </f:if>
+
+    <div class="location-detail__body">
+        <h1 class="location-detail__name">{location.name}</h1>
+
+        <address class="location-detail__address">
+            <f:if condition="{location.street}">
+                <span>{location.street}</span><br />
+            </f:if>
+            <f:if condition="{location.zip || location.city}">
+                <span>{location.zip} {location.city}</span><br />
+            </f:if>
+            <f:if condition="{location.country}">
+                <span>{location.country}</span>
+            </f:if>
+        </address>
+
+        <f:if condition="{location.phone}">
+            <p class="location-detail__phone">
+                <a href="tel:{location.phone}">{location.phone}</a>
+            </p>
+        </f:if>
+
+        <f:if condition="{location.email}">
+            <p class="location-detail__email">
+                <a href="mailto:{location.email}">{location.email}</a>
+            </p>
+        </f:if>
+
+        <f:if condition="{location.description}">
+            <div class="location-detail__description">
+                <f:format.html>{location.description}</f:format.html>
+            </div>
+        </f:if>
+
+        <f:if condition="{location.openingHours}">
+            <div class="location-detail__opening-hours">
+                <f:render partial="Location/OpeningHours" arguments="{openingHours: location.openingHours}" />
+            </div>
+        </f:if>
+
+        <f:if condition="{location.hasCoordinates}">
+            <div class="location-detail__map" data-lat="{location.latitude}" data-lng="{location.longitude}">
+            </div>
+        </f:if>
+    </div>
+</article>
+</html>
