@@ -17,7 +17,7 @@ return (new Table($lang('table.tx_mailocations_location')))
     ->setSearchFields('name,street,city,email')
     ->setDefaultConfig()
     ->setLabel('name')
-    ->setIconFile('EXT:mai_locations/Resources/Public/Icons/tx_mailocations_location.svg')
+    ->setIconFile('EXT:mai_base/Resources/Public/Icons/generic_table.svg')
     ->setSortingField()
     ->addColumn(
         'name',

@@ -15,11 +15,11 @@ ExtensionUtility::registerPlugin(
     'MaiLocations',
     'List',
     $lang('plugin.list.title'),
-    'ext-maispace-mai_locations',
+    'mai-content',
     'maispace_feature',
 );
 
-(new CType('maispace_locations_list', $lang('ctype.locations_list'), 'ext-maispace-mai_locations'))
+(new CType('maispace_locations_list', $lang('ctype.locations_list'), 'mai-content'))
     ->addDefaultHeaderPalette()
     ->addCustomFields('pi_flexform')
     ->addDefaultLanguageTab()
@@ -37,11 +37,11 @@ ExtensionUtility::registerPlugin(
     'MaiLocations',
     'Detail',
     $lang('plugin.detail.title'),
-    'ext-maispace-mai_locations',
+    'mai-content',
     'maispace_feature',
 );
 
-(new CType('maispace_locations_detail', $lang('ctype.locations_detail'), 'ext-maispace-mai_locations'))
+(new CType('maispace_locations_detail', $lang('ctype.locations_detail'), 'mai-content'))
     ->addDefaultHeaderPalette()
     ->addDefaultLanguageTab()
     ->addDefaultAccessTab()
