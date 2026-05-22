@@ -18,8 +18,7 @@ class LocationController extends AbstractActionController
 
     public function __construct(
         private readonly LocationRepository $locationRepository,
-    ) {
-    }
+    ) {}
 
     public function listAction(): ResponseInterface
     {
@@ -64,7 +63,7 @@ class LocationController extends AbstractActionController
         }
 
         return array_filter(
-            array_map('intval', explode(',', (string)$pages)),
+            array_map('intval', explode(',', (string) $pages)),
             static fn(int $uid): bool => $uid > 0,
         );
     }

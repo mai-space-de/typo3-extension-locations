@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-01-01T00:00:00Z" product-name="mai_locations">
+        <header/>
+        <body>
+            <!-- Opening hours day names -->
+            <trans-unit id="dayOfWeek.0">
+                <source>Monday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.1">
+                <source>Tuesday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.2">
+                <source>Wednesday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.3">
+                <source>Thursday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.4">
+                <source>Friday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.5">
+                <source>Saturday</source>
+            </trans-unit>
+            <trans-unit id="dayOfWeek.6">
+                <source>Sunday</source>
+            </trans-unit>
+
+            <!-- Opening hours state labels -->
+            <trans-unit id="opening_hours.closed">
+                <source>Closed</source>
+            </trans-unit>
+
+            <!-- List / detail navigation -->
+            <trans-unit id="location.backToList">
+                <source>Back to list</source>
+            </trans-unit>
+            <trans-unit id="location.noResults">
+                <source>No locations found.</source>
+            </trans-unit>
+            <trans-unit id="location.openingHours">
+                <source>Opening hours</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

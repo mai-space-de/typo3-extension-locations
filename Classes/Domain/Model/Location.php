@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Maispace\MaiLocations\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Location extends AbstractEntity
@@ -48,13 +47,8 @@ class Location extends AbstractEntity
 
     public function initializeObject(): void
     {
-        $this->image = $this->image instanceof LazyLoadingProxy
-            ? $this->image->_loadRealInstance()
-            : ($this->image ?? new ObjectStorage());
-
-        $this->openingHours = $this->openingHours instanceof LazyLoadingProxy
-            ? $this->openingHours->_loadRealInstance()
-            : ($this->openingHours ?? new ObjectStorage());
+        $this->image = new ObjectStorage();
+        $this->openingHours = new ObjectStorage();
     }
 
     public function getName(): string

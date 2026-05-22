@@ -1,21 +1,29 @@
-plugin.tx_mailocations_list {
-    view {
-        templateRootPath =
-        partialRootPath =
-        layoutRootPath =
+plugin {
+    tx_mailocations {
+        view {
+            templateRootPath = EXT:mai_locations/Resources/Private/Templates/
+            partialRootPath = EXT:mai_locations/Resources/Private/Partials/
+            layoutRootPath = EXT:mai_locations/Resources/Private/Layouts/
+        }
     }
-    persistence {
-        storagePid =
+    tx_mailocations_list {
+        view {
+            templateRootPath =
+            partialRootPath =
+            layoutRootPath =
+        }
+        persistence {
+            storagePid =
+        }
     }
-}
-
-plugin.tx_mailocations_detail {
-    view {
-        templateRootPath =
-        partialRootPath =
-        layoutRootPath =
-    }
-    persistence {
-        storagePid =
+    tx_mailocations_detail {
+        view {
+            templateRootPath =
+            partialRootPath =
+            layoutRootPath =
+        }
+        persistence {
+            storagePid =
+        }
     }
 }
