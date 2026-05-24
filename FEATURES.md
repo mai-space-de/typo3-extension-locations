@@ -2,7 +2,7 @@
 
 Extension key: `mai_locations`
 Layer: Feature
-Status: 📋 Scaffolded
+Status: 🔨 In Progress
 
 ---
 
