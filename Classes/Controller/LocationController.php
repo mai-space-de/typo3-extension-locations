@@ -6,7 +6,6 @@ namespace Maispace\MaiLocations\Controller;
 
 use Maispace\MaiBase\Controller\AbstractActionController;
 use Maispace\MaiBase\Controller\Traits\AppendDataToPluginVariablesTrait;
-use Maispace\MaiBase\Controller\Traits\DetailActionTrait;
 use Maispace\MaiLocations\Domain\Model\Location;
 use Maispace\MaiLocations\Domain\Repository\LocationRepository;
 use Psr\Http\Message\ResponseInterface;
@@ -14,7 +13,6 @@ use Psr\Http\Message\ResponseInterface;
 class LocationController extends AbstractActionController
 {
     use AppendDataToPluginVariablesTrait;
-    use DetailActionTrait;
 
     public function __construct(
         private readonly LocationRepository $locationRepository,
@@ -41,10 +39,15 @@ class LocationController extends AbstractActionController
         return $this->htmlResponse();
     }
 
-    public function detailAction(): ResponseInterface
+    public function detailAction(?Location $location = null): ResponseInterface
     {
-        $location = $this->resolveDetailOrNotFound($this->locationRepository);
-        assert($location instanceof Location);
+        if ($location === null) {
+            $location = $this->resolveFallbackLocation();
+        }
+
+        if ($location === null) {
+            return $this->htmlResponse('<p>No location found.</p>');
+        }
 
         $this->view->assignMultiple([
             'location' => $location,
@@ -53,6 +56,21 @@ class LocationController extends AbstractActionController
         ]);
 
         return $this->htmlResponse();
+    }
+
+    private function resolveFallbackLocation(): ?Location
+    {
+        $pageUids = $this->resolveStoragePageUids();
+
+        if ($pageUids !== []) {
+            $locations = $this->locationRepository->findFromPages($pageUids);
+        } else {
+            $locations = $this->locationRepository->findAll();
+        }
+
+        $firstLocation = $locations->getFirst();
+
+        return $firstLocation instanceof Location ? $firstLocation : null;
     }
 
     private function resolveStoragePageUids(): array
