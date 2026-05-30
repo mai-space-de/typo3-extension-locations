@@ -1,8 +1,10 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:seo="http://typo3.org/ns/Maispace/MaiSeo/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
 <article class="location-detail">
+    <seo:structuredData />
     <f:if condition="{location.coverImage}">
         <div class="location-detail__image">
             <f:image image="{location.coverImage}" alt="{location.name}" width="800" height="450c" />
