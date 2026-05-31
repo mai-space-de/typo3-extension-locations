@@ -8,7 +8,9 @@ use Maispace\MaiBase\Controller\AbstractActionController;
 use Maispace\MaiBase\Controller\Traits\AppendDataToPluginVariablesTrait;
 use Maispace\MaiLocations\Domain\Model\Location;
 use Maispace\MaiLocations\Domain\Repository\LocationRepository;
+use Maispace\MaiLocations\Service\LocationStoragePageResolver;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Routing\PageArguments;
 
 class LocationController extends AbstractActionController
 {
@@ -16,6 +18,7 @@ class LocationController extends AbstractActionController
 
     public function __construct(
         private readonly LocationRepository $locationRepository,
+        private readonly LocationStoragePageResolver $locationStoragePageResolver,
     ) {}
 
     public function listAction(): ResponseInterface
@@ -76,13 +79,16 @@ class LocationController extends AbstractActionController
     private function resolveStoragePageUids(): array
     {
         $pages = $this->settings['pages'] ?? '';
-        if (empty($pages)) {
-            return [];
+        if (!empty($pages)) {
+            return array_values(array_filter(
+                array_map('intval', explode(',', (string) $pages)),
+                static fn(int $uid): bool => $uid > 0,
+            ));
         }
 
-        return array_filter(
-            array_map('intval', explode(',', (string) $pages)),
-            static fn(int $uid): bool => $uid > 0,
-        );
+        $pageArguments = $this->request->getAttribute('routing');
+        $pageUid = $pageArguments instanceof PageArguments ? $pageArguments->getPageId() : 0;
+
+        return $this->locationStoragePageResolver->resolve($pageUid);
     }
 }
