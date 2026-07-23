@@ -1,48 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="messages" date="2024-01-01T00:00:00Z" product-name="mai_locations">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2024-01-01T00:00:00Z" product-name="mai_locations">
         <header/>
         <body>
             <!-- Opening hours day names -->
             <trans-unit id="dayOfWeek.0">
                 <source>Monday</source>
+                <target>Montag</target>
             </trans-unit>
             <trans-unit id="dayOfWeek.1">
                 <source>Tuesday</source>
+                <target>Dienstag</target>
             </trans-unit>
             <trans-unit id="dayOfWeek.2">
                 <source>Wednesday</source>
+                <target>Mittwoch</target>
             </trans-unit>
             <trans-unit id="dayOfWeek.3">
                 <source>Thursday</source>
+                <target>Donnerstag</target>
             </trans-unit>
             <trans-unit id="dayOfWeek.4">
                 <source>Friday</source>
+                <target>Freitag</target>
             </trans-unit>
             <trans-unit id="dayOfWeek.5">
                 <source>Saturday</source>
+                <target>Samstag</target>
             </trans-unit>
             <trans-unit id="dayOfWeek.6">
                 <source>Sunday</source>
+                <target>Sonntag</target>
             </trans-unit>
 
             <!-- Opening hours state labels -->
             <trans-unit id="opening_hours.closed">
                 <source>Closed</source>
+                <target>Geschlossen</target>
             </trans-unit>
 
             <!-- List / detail navigation -->
             <trans-unit id="location.backToList">
                 <source>Back to list</source>
+                <target>Zurück zur Übersicht</target>
             </trans-unit>
             <trans-unit id="location.noResults">
                 <source>No locations found.</source>
+                <target>Keine Standorte gefunden.</target>
             </trans-unit>
             <trans-unit id="location.notFound">
                 <source>Location not found.</source>
+                <target>Standort nicht gefunden.</target>
             </trans-unit>
             <trans-unit id="location.openingHours">
                 <source>Opening hours</source>
+                <target>Öffnungszeiten</target>
             </trans-unit>
         </body>
     </file>

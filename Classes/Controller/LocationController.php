@@ -11,6 +11,7 @@ use Maispace\MaiLocations\Domain\Repository\LocationRepository;
 use Maispace\MaiLocations\Service\LocationStoragePageResolver;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Routing\PageArguments;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class LocationController extends AbstractActionController
 {
@@ -49,7 +50,8 @@ class LocationController extends AbstractActionController
         }
 
         if ($location === null) {
-            return $this->htmlResponse('<p>No location found.</p>');
+            $message = LocalizationUtility::translate('location.notFound', 'mai_locations') ?? 'Location not found.';
+            return $this->htmlResponse('<p class="location-detail__empty">' . htmlspecialchars($message) . '</p>');
         }
 
         $this->view->assignMultiple([
