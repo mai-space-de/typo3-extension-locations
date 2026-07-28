@@ -88,8 +88,8 @@ Translation keys (in `Resources/Private/Language/Default/locallang.xlf`):
 
 | CType | Title | Controller | Action | Cached | FlexForm |
 | --- | --- | --- | --- | --- | --- |
-| `maispace_locations_list` | Locations List | `LocationController` | `list` | ✅ | ✅ (`LocationsListPlugin.xml`) |
-| `maispace_locations_detail` | Location Detail | `LocationController` | `detail` | ✅ | — |
+| `mailocations_list` | Locations List | `LocationController` | `list` | ✅ | ✅ (`LocationsListPlugin.xml`) |
+| `mailocations_detail` | Location Detail | `LocationController` | `detail` | ✅ | — |
 
 Both are registered in the `maispace_feature` content element group.
 Both use the shared `mai-content` icon from `mai_base`.
@@ -149,7 +149,7 @@ visitor grants consent.
 
 ## 6. FlexForm Configuration
 
-Applies to the List plugin only (`maispace_locations_list`).
+Applies to the List plugin only (`mailocations_list`).
 
 | Field | Type | Default | Purpose |
 | --- | --- | --- | --- |
