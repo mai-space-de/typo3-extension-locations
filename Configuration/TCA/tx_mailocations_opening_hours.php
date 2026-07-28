@@ -15,6 +15,7 @@ return (new Table($lang('table.tx_mailocations_opening_hours')))
     ->setLabel('day_of_week')
     ->setIconFile('EXT:mai_base/Resources/Public/Icons/generic_table.svg')
     ->setSortingField()
+    ->disableRecordModule()
     ->addColumn(
         'day_of_week',
         $lang('tx_mailocations_opening_hours.day_of_week'),
