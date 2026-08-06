@@ -10,6 +10,8 @@ use Maispace\MaiLocations\Domain\Model\Location;
 use Maispace\MaiLocations\Domain\Repository\LocationRepository;
 use Maispace\MaiLocations\Service\LocationStoragePageResolver;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Pagination\QueryBuilderPaginator;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Routing\PageArguments;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
@@ -22,20 +24,27 @@ class LocationController extends AbstractActionController
         private readonly LocationStoragePageResolver $locationStoragePageResolver,
     ) {}
 
-    public function listAction(): ResponseInterface
+    public function listAction(int $page = 1): ResponseInterface
     {
         $settings = $this->getSettings();
-
         $pageUids = $this->resolveStoragePageUids();
+        $itemsPerPage = (int) ($settings['limit'] ?? 10);
 
-        if ($pageUids !== []) {
-            $locations = $this->locationRepository->findFromPages($pageUids);
-        } else {
-            $locations = $this->locationRepository->findAll();
-        }
+        $queryBuilder = $this->locationRepository->createQueryBuilderForPagination($pageUids);
+
+        $paginator = new QueryBuilderPaginator(
+            $queryBuilder,
+            $page,
+            $itemsPerPage
+        );
+
+        $pagination = new SimplePagination($paginator);
 
         $this->view->assignMultiple([
-            'locations' => $locations,
+            'locations' => $paginator->getPaginatedItems(),
+            'pagination' => $pagination,
+            'paginator' => $paginator,
+            'currentPage' => $page,
             'settings' => $settings,
             'contentObject' => $this->getContentObjectData(),
         ]);

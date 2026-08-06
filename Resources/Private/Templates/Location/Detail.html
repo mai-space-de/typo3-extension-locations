@@ -40,7 +40,7 @@
 
         <f:if condition="{location.description}">
             <div class="location-detail__description">
-                <f:format.html>{location.description}</f:format.html>
+                <f:render.text record="{location}" field="description" />
             </div>
         </f:if>
 
