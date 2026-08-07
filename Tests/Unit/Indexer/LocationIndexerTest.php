@@ -6,16 +6,45 @@ namespace Maispace\MaiLocations\Tests\Unit\Indexer;
 
 use Maispace\MaiLocations\Domain\Model\Location;
 use Maispace\MaiLocations\Indexer\LocationIndexer;
+use Maispace\MaiSearch\Domain\Service\SearchBackendInterface;
+use Maispace\MaiSearch\Service\BackendRegistry;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 final class LocationIndexerTest extends TestCase
 {
     private LocationIndexer $subject;
+    private BackendRegistry&MockObject $backendRegistry;
+    private SearchBackendInterface&MockObject $activeBackend;
 
     protected function setUp(): void
     {
         $this->subject = new LocationIndexer();
+
+        $this->activeBackend = $this->createMock(SearchBackendInterface::class);
+        $this->backendRegistry = $this->createMock(BackendRegistry::class);
+        $this->backendRegistry->method('getActive')->willReturn($this->activeBackend);
+        $this->subject->injectBackendRegistry($this->backendRegistry);
+    }
+
+    #[Test]
+    public function removeRecordDelegatesToActiveBackend(): void
+    {
+        $this->activeBackend
+            ->expects(self::once())
+            ->method('removeDocument')
+            ->with('location', 42);
+
+        $this->subject->removeRecord(42, 'tx_mailocations_location');
+    }
+
+    #[Test]
+    public function removeRecordIsNoOpForUnsupportedTable(): void
+    {
+        $this->activeBackend->expects(self::never())->method('removeDocument');
+
+        $this->subject->removeRecord(42, 'tx_mainews_news');
     }
 
     #[Test]
