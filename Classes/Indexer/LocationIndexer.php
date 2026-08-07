@@ -24,6 +24,11 @@ class LocationIndexer extends AbstractIndexer implements SearchResultFormatterIn
         return 'location';
     }
 
+    public function getTableName(): string
+    {
+        return self::TABLE_NAME;
+    }
+
     public function supports(string $table): bool
     {
         return $table === self::TABLE_NAME;
