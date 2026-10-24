@@ -13,7 +13,7 @@ $lang = Helper::localLangHelperFactory('mai_locations', 'Default/locallang_tca.x
 return (new Table($lang('table.tx_mailocations_opening_hours')))
     ->setDefaultConfig()
     ->setLabel('day_of_week')
-    ->setIconFile('EXT:mai_base/Resources/Public/Icons/generic_table.svg')
+    ->setIconFile('EXT:mai_base/Resources/Public/Icons/all-icons/interface-time-clock-nine-to-five--work-hour-time-clock--Streamline-Core.svg')
     ->setSortingField()
     ->disableRecordModule()
     ->addColumn(

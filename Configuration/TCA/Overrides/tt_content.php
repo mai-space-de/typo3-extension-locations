@@ -13,7 +13,7 @@ ExtensionUtility::registerPlugin(
     'MaiLocations',
     'List',
     $lang('plugin.list.title'),
-    'mai-content',
+    'mai-locations',
     'maispace_plugins_lists',
     '',
     'FILE:EXT:mai_locations/Configuration/FlexForms/LocationsListPlugin.xml',
@@ -23,6 +23,6 @@ ExtensionUtility::registerPlugin(
     'MaiLocations',
     'Detail',
     $lang('plugin.detail.title'),
-    'mai-content',
+    'mai-locations',
     'maispace_plugins_lists',
 );
