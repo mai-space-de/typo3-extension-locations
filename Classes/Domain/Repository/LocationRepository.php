@@ -42,8 +42,8 @@ class LocationRepository extends Repository
                 ->andWhere(
                     $queryBuilder->expr()->in(
                         'pid',
-                        $queryBuilder->createNamedParameter($pageUids, Connection::PARAM_INT_ARRAY)
-                    )
+                        $queryBuilder->createNamedParameter($pageUids, Connection::PARAM_INT_ARRAY),
+                    ),
                 );
         }
 
