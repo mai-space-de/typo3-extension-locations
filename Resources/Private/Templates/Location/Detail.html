@@ -1,5 +1,6 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:mai="http://typo3.org/ns/Maispace/MaiAssets/ViewHelpers"
     xmlns:seo="http://typo3.org/ns/Maispace/MaiSeo/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
@@ -7,7 +8,10 @@
     <seo:structuredData />
     <f:if condition="{location.coverImage}">
         <div class="location-detail__image">
-            <f:image image="{location.coverImage}" alt="{location.name}" width="800" height="450c" />
+            <mai:image.picture image="{location.coverImage}"
+                               alt="{location.name}"
+                               slot="location-detail"
+                               width="800"/>
         </div>
     </f:if>
 

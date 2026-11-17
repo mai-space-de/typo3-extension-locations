@@ -1,12 +1,17 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:mai="http://typo3.org/ns/Maispace/MaiAssets/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
 <f:for each="{locations}" as="location">
     <div class="location-card">
         <f:if condition="{location.coverImage}">
             <div class="location-card__image">
-                <f:image image="{location.coverImage}" alt="{location.name}" width="400" height="300c" />
+                <mai:image.picture image="{location.coverImage}"
+                                   alt="{location.name}"
+                                   slot="location-card"
+                                   width="400"
+                                   critical="false"/>
             </div>
         </f:if>
         <div class="location-card__content">
